@@ -291,4 +291,10 @@ progress[value]::-webkit-progress-value {
     background-color: #4cab82;
 }
 
+@media only screen and (min-device-width: 480px){
+    #save {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+}
 
