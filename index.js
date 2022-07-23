@@ -237,5 +237,6 @@ window.onload = () => {
         document.getElementById(HTML_ELEMENT_PAD_ID).value = savedPadTextContent;
     }
     
+    countWords();
     document.getElementById("pad").setAttribute("spellcheck", "false");
 }
