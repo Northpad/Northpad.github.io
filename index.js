@@ -187,12 +187,12 @@ const onKeyDown = (e) => {
                   
         onClickFocus();
         document.getElementById("pad").setAttribute("spellcheck", "false");
-
+        
         if ([KEY_CODE_BACKSPACE, 
-        KEY_CODE_LEFT_ARROW, 
-        KEY_CODE_UP_ARROW, 
-        KEY_CODE_RIGHT_ARROW, 
-        KEY_CODE_DOWN_ARROW].includes(keyCode)) {
+            KEY_CODE_LEFT_ARROW, 
+            KEY_CODE_UP_ARROW, 
+            KEY_CODE_RIGHT_ARROW, 
+            KEY_CODE_DOWN_ARROW].includes(keyCode)) {
             return false;
         }
          
@@ -237,6 +237,5 @@ window.onload = () => {
         document.getElementById(HTML_ELEMENT_PAD_ID).value = savedPadTextContent;
     }
     
-    countWords();
     document.getElementById("pad").setAttribute("spellcheck", "false");
 }
