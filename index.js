@@ -122,39 +122,36 @@ function init () {
 
 init(); 
 
-		function countWords() {
+function countWords() {
 
-			// Get the input text value
-			var text = document
-				.getElementById("pad").value;
+    // Get the input text value
+    var text = document.getElementById("pad").value;
 
-			// Initialize the word counter
-			var numWords = 0;
+    // Initialize the word counter
+    var numWords = 0;
 
-			// Loop through the text
-			// and count spaces in it
-			for (var i = 0; i < text.length; i++) {
-				var currentCharacter = text[i];
+    // Loop through the text
+    // and count spaces in it
+    for (var i = 0; i < text.length; i++) {
+        var currentCharacter = text[i];
 
-				// Check if the character is a space
-				if (currentCharacter == " ") {
-					numWords += 1;
-				}
-			}
+        // Check if the character is a space
+        if (currentCharacter == " ") {
+            numWords += 1;
+        }
+    }
 
-			// Add 1 to make the count equal to
-			// the number of words
-			// (count of words = count of spaces + 1)
-			numWords += 1;
+    // Add 1 to make the count equal to
+    // the number of words
+    // (count of words = count of spaces + 1)
+    numWords += 1;
 
-			// Display it as output
-			document.getElementById("show")
-				.innerHTML = numWords;
-		}
+    // Display it as output
+    document.getElementById("show").innerHTML = numWords;
+}
 
 const onKeyDown = (e) => { 
     
-
     countWords();
     
     const keyCode = e.keyCode || e.which;
@@ -239,4 +236,6 @@ window.onload = () => {
     if (savedPadTextContent.length > 0) {
         document.getElementById(HTML_ELEMENT_PAD_ID).value = savedPadTextContent;
     }
+    
+    document.getElementById("pad").setAttribute("spellcheck", "false");
 }
