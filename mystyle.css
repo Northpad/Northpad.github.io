@@ -33,6 +33,15 @@
   src: url(Fonts/Poppins-Regular.ttf);
 }
 
+#show {
+    font-family: PoppinsLight;
+    color: #cfd1d3;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 20px; 
+    right: 20px;
+}
+
 #wordcountcontainer {
     position: relative;
 }
@@ -188,6 +197,7 @@ textarea {
     padding: 40px 5px 35px 0px;
     background-image: url(backgroundred.png);
     background-repeat: repeat-y;
+    position: relative;
 }
 
 #clipboard {
