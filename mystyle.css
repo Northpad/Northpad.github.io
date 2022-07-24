@@ -82,6 +82,14 @@ h1 {
     margin-top: 52px;
 }
 
+h3 {
+    font-family: PoppinsMedium;
+    font-size: 1.1rem;
+    text-align: left;
+    margin-bottom: -30px;
+    color: #ffffff;
+}
+
 #introtext span {
     font-family: PoppinsMediumItalic;
 }
@@ -155,7 +163,7 @@ h1 span {
    -ms-user-select: none;
 }
 
-#pad {
+.textarea {
     display: block;
     width: 100%;
     min-height: 207px;
@@ -218,7 +226,7 @@ textarea {
     cursor: pointer;
 }
 
-#save {
+.save {
     background: #ffffff;
     border-radius: 30px;
     padding: 15px 30px;
@@ -231,7 +239,7 @@ textarea {
     margin-left: 20px;
 }
 
-#save:hover {
+.save:hover {
     -webkit-box-shadow: -1px 15px 11px -1px rgba(36,35,53,0.62); 
     box-shadow: -1px 15px 11px -1px rgba(36,35,53,0.62);
     cursor: pointer;
@@ -299,6 +307,55 @@ progress[value]::-webkit-progress-bar {
 
 progress[value]::-webkit-progress-value {
     background-color: #4cab82;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: #242335;
+  border-radius: 15px;
+  margin-bottom: 52px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  padding: 25px 45px;
+  font-family: PoppinsLight;
+  font-size: 1.0rem;
+  color: #ffffff;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #4cab82;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #4cab82;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  border-top: none;
+}
+
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @media screen and (max-width: 580px) {

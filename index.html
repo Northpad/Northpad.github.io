@@ -22,19 +22,81 @@
             <img src="northpad.svg" id="logo" alt="Northpad logo" title="NorthPad logo"/>
             <p id="introtext">Your first draft isn't expected to be perfect. In fact, it <span>should</span> be messy, senseless and full of errors. We created Northpad to help writers prioritise that which matters most: finishing! Set your target and we'll tell you when it's time to edit.</p>
             <p id="secondarytext">Northpad uses your browser's local storage to save your writing and does not store any of your data.</p>
-            <div id="wordcountcontainer">
-                <label for="wordcount">WORDS</label>
-                <input id="desired-word-count" placeholder="3000" maxlength="6" value="3000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                <img src="changeme.svg" alt="Change me" title="Change me" id="changeme"/>
+            <!-- Tab links -->
+            <div class="tab">
+              <button class="tablinks" id="defaultOpen" onclick="openCity(event, 'Text')">Text</button>
+              <button class="tablinks" onclick="openCity(event, 'Planner')">Planner</button>
             </div>
-            <div id="textareacontainer">
-                <div id="show"></div>
-                <textarea onkeydown="return onKeyDown(event)" id="pad" name="textarea" placeholder="Once upon a time..." autofocus></textarea>
+            <!-- Tab content -->
+            <div id="Text" class="tabcontent">
+                <div id="wordcountcontainer">
+                    <label for="wordcount">WORDS</label>
+                    <input id="desired-word-count" placeholder="3000" maxlength="6" value="3000" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    <img src="changeme.svg" alt="Change me" title="Change me" id="changeme"/>
+                </div>
+                <div id="textareacontainer">
+                    <div id="show"></div>
+                    <textarea onkeydown="return onKeyDown(event)" id="pad" class="textarea" name="textarea" placeholder="Once upon a time..." autofocus></textarea>
+                </div>
+                <p class="centered">
+                    <button id="clipboard" onclick="copyToClipboard()">Copy to clipboard</button>
+                    <button id="save" class="save" onclick="saveForLater()">Save changes</button>
+                </p>
             </div>
-            <p class="centered">
-                <button id="clipboard" onclick="copyToClipboard()">Copy to clipboard</button>
-                <button id="save" onclick="saveForLater()">Save changes</button>
-            </p>
+
+            <div id="Planner" class="tabcontent">
+                <h3>Ordinary World</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-1" maxlength="300" placeholder="Harry Potter lives in the cupboard under the stairs..."></textarea>
+                </div>
+                <h3>Call to Adventure</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-2" maxlength="300" placeholder="Harry receives a letter to attend Hogwarts School of Witchcraft and Wizardry..."></textarea>
+                </div>
+                <h3>Refusal of the Call</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-3" maxlength="300" placeholder="Harry doesn't believe that he could be a real wizard..."></textarea>
+                </div>
+                <h3>Meeting the Mentor</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-4" maxlength="300" placeholder="Harry meets Hagrid who takes him to Diagon Alley..."></textarea>
+                </div>
+                <h3>Crossing the First Threshold</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-5" maxlength="300" placeholder="Harry learns that his parents actually died at the hands of Lord Voldemort..."></textarea>
+                </div>
+                <h3>Tests, Allies and Enemies</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-6" maxlength="300" placeholder="Harry adjusts to life at Hogwarts..."></textarea>
+                </div>
+                <h3>Approaching the Innermost Cavern</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-7" maxlength="300" placeholder="Harry and his friends plan to get the philosopher's stone before before Snape..."></textarea>
+                </div>
+                <h3>The Ordeal</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-8" maxlength="300" placeholder="Harry and his friends overcome obstacles standing in the way of the philosopher's stone..."></textarea>
+                </div>
+                <h3>The Reward</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-9" maxlength="300" placeholder="Harry enters the room where the philosopher's stone is hidden..."></textarea>
+                </div>
+                <h3>The Road Back</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-10" maxlength="300" placeholder="Harry faces Professor Quirrel, who has been hosting Lord Voldemort in his body..."></textarea>
+                </div>
+                <h3>The Resurrection</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-11" maxlength="300" placeholder="Harry wakes up in the hospital and Professor Dumbledore tells him he was protected by his mothers love..."></textarea>
+                </div>
+                <h3>The Return with the Elixer</h3>
+                <div id="textareacontainer">
+                    <textarea class="textarea" id="planner-text-12" maxlength="300" placeholder="Harry returns to the Dursley's at 4 Privet Drive for the summer..."></textarea>
+                </div>
+                <p class="centered">
+                    <button id="save" class="save" onclick="saveForLater2()">Save changes</button>
+                </p>
+            </div>
         </div>
         <script type="text/javascript" src="./index.js"></script>
     </body>
