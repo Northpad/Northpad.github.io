@@ -11,6 +11,7 @@ const HTML_ELEMENT_PROGRESS_BAR_ID = "progress-bar";
 const HTML_ELEMENT_SHAKE_ANIMATION_CLASS = "shake-animation";
 const CSS_DISABLE_TEXTAREA_SELECTION = "textarea::selection { background-color: transparent; }";
 const LOCAL_STORAGE_KEY_PAD_TEXT_CONTENT = "pad-text-content";
+const LOCAL_STORAGE_WORD_TEXT_CONTENT = "word-text-content";
 const SYSTEM_MSG_SUCCESS_SAVE_PAD_TEXT_CONTENT = "Successfully saved the text for later!";
 const SYSTEM_MSG_ERROR_SAVE_PAD_TEXT_CONTENT = "Oops! We were unable to save the text!";
 const SYSTEM_MSG_ERROR_COPY_PAD_TEXT_CONTENT = "Oops! We were unable to copy the text!";
@@ -24,6 +25,9 @@ const desiredWordCount = () =>
 
 const padTextcontent = () => 
     document.getElementById(HTML_ELEMENT_PAD_ID).value;
+
+const wordTextcontent = () => 
+    document.getElementById(HTML_ELEMENT_DESIRED_WORD_COUNT_ID).value;
 
 const padWordCount = () => padTextcontent().trim().split(" ").length;
 
@@ -213,6 +217,7 @@ const copyToClipboard = () => {
 const saveForLater = () => {
     try {
         window.localStorage.setItem(LOCAL_STORAGE_KEY_PAD_TEXT_CONTENT, padTextcontent());
+        window.localStorage.setItem(LOCAL_STORAGE_WORD_TEXT_CONTENT, wordTextcontent());
         tempAlert2("Your text has successfully been saved to your browser",4500);
     }
     catch {
@@ -235,6 +240,11 @@ window.onload = () => {
     const savedPadTextContent = window.localStorage.getItem(LOCAL_STORAGE_KEY_PAD_TEXT_CONTENT) || "";
     if (savedPadTextContent.length > 0) {
         document.getElementById(HTML_ELEMENT_PAD_ID).value = savedPadTextContent;
+    }
+    
+    const savedWordTextContent = window.localStorage.getItem(LOCAL_STORAGE_WORD_TEXT_CONTENT) || "";
+    if (savedWordTextContent.length > 0) {
+        document.getElementById(HTML_ELEMENT_DESIRED_WORD_COUNT_ID).value = savedWordTextContent;
     }
     
     init();
