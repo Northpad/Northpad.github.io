@@ -120,7 +120,7 @@ function init () {
  resize();
 }
 
-init(); 
+init();      
 
 function countWords() {
 
@@ -169,8 +169,8 @@ const onKeyDown = (e) => {
             tempAlert2("Congratulations! You have reached your goal and may now edit",4500);
         }
         
-        if ([KEY_CODE_BACKSPACE, 
-        KEY_CODE_LEFT_ARROW, 
+        if ([ 
+        KEY_CODE_BACKSPACE, KEY_CODE_LEFT_ARROW, 
         KEY_CODE_UP_ARROW, 
         KEY_CODE_RIGHT_ARROW, 
         KEY_CODE_DOWN_ARROW].includes(keyCode)) {
@@ -188,8 +188,8 @@ const onKeyDown = (e) => {
         onClickFocus();
         document.getElementById("pad").setAttribute("spellcheck", "false");
         
-        if ([KEY_CODE_BACKSPACE, 
-            KEY_CODE_LEFT_ARROW, 
+        if ([ 
+            KEY_CODE_BACKSPACE, KEY_CODE_LEFT_ARROW, 
             KEY_CODE_UP_ARROW, 
             KEY_CODE_RIGHT_ARROW, 
             KEY_CODE_DOWN_ARROW].includes(keyCode)) {
@@ -236,6 +236,8 @@ window.onload = () => {
     if (savedPadTextContent.length > 0) {
         document.getElementById(HTML_ELEMENT_PAD_ID).value = savedPadTextContent;
     }
+    
+    init();
     
     document.getElementById("pad").setAttribute("spellcheck", "false");
 }
