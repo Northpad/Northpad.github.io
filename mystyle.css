@@ -312,8 +312,8 @@ progress[value]::-webkit-progress-value {
 /* Style the tab */
 .tab {
   overflow: hidden;
-  background-color: #242335;
-  border-radius: 15px;
+  background-color: #ffffff;
+  border-radius: 35px;
   margin-bottom: 52px;
 }
 
@@ -326,10 +326,11 @@ progress[value]::-webkit-progress-value {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  padding: 25px 45px;
-  font-family: PoppinsLight;
-  font-size: 1.0rem;
-  color: #ffffff;
+  padding: 15px 45px;
+  font-family: PoppinsMedium;
+  font-size: 1.1rem; 
+  color: #2d2b40;
+  width:50%;
 }
 
 /* Change background color of buttons on hover */
